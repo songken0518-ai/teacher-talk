@@ -119,28 +119,6 @@
   .analogy .ai{font-size:1.4rem;line-height:1}
   .analogy .at{font-size:.95rem}
   .analogy .at b{color:#1c6b43}
-/* http vs https 攔截示範 */
-.httpsdemo{border:1px solid var(--line,#dfe3ee);border-radius:14px;overflow:hidden;margin:16px 0;background:#fff}
-.httpsdemo .hd-tabs{display:flex}
-.httpsdemo .hd-tab{flex:1;padding:11px 8px;border:0;cursor:pointer;font-weight:800;font-size:.92rem;background:#eceff5;color:#5a5f70}
-.httpsdemo.http .hd-tab.t-http{background:var(--denied);color:#fff}
-.httpsdemo.https .hd-tab.t-https{background:var(--clue);color:#fff}
-.httpsdemo .hd-addr{display:flex;align-items:center;padding:12px 16px;font-family:"Space Mono",monospace;font-size:.98rem;font-weight:700}
-.httpsdemo.http .hd-addr{background:var(--denied-soft);color:#a8331f}
-.httpsdemo.https .hd-addr{background:var(--clue-soft);color:#176844}
-.httpsdemo.http .hd-addr::before{content:"⚠️ 不安全　｜　http://mybank.example.com"}
-.httpsdemo.https .hd-addr::before{content:"🔒 安全　｜　https://mybank.example.com"}
-.httpsdemo .hd-scene{padding:14px 16px;display:flex;flex-direction:column;gap:10px}
-.httpsdemo .hd-box{border-radius:10px;padding:11px 14px;font-size:.95rem;line-height:1.75}
-.httpsdemo .hd-you{background:#eef2f8}
-.httpsdemo.http .hd-hack{background:var(--denied-soft)}
-.httpsdemo.https .hd-hack{background:var(--clue-soft)}
-.httpsdemo .hd-seen{margin-top:6px;font-family:"Space Mono",monospace;font-weight:800;word-break:break-all}
-.httpsdemo.http .hd-seen{color:#a8331f}
-.httpsdemo.https .hd-seen{color:#176844}
-.httpsdemo.http .hd-seen::before{content:"帳號：ken　密碼：1234　← 明文，看得一清二楚！"}
-.httpsdemo.https .hd-seen::before{content:"aX9$kL2#pQ7@zR4!vM8... ← 加密亂碼，偷了也沒用！"}
-.httpsdemo .hd-hint{font-size:.85rem;color:#8a7a55;padding:2px 16px 12px}
 
 
   .example{background:var(--blue-soft);border-left:4px solid var(--blue);border-radius:0 11px 11px 0;padding:16px 20px;margin:18px 0}
@@ -857,7 +835,7 @@ body{background:#fbfaf6;color:#1f2230}
 <div class="rz-row"><div class="rz-left"><span class="rz-no">3</span><div class="example"><div class="et">🌍 生活中的例子</div><div class="eb">在<b>公共 Wi-Fi</b> 登入或付款，先看網址有沒有鎖頭。有 https，帳密就算被攔到也只是亂碼。</div></div></div><div class="rz-right"><div class='rzh'>🎤 第 3 塊 · 老師照著念</div><p>講個生活例子：在<b>公共 Wi-Fi</b> 登入或付款前，先看網址有沒有鎖頭，有 https，帳密被攔到也只是亂碼。把它變成一個你真會遇到的抉擇：<b>咖啡廳免費 Wi-Fi，該不該登網路銀行？</b><span class='rzcue'>（停一下，讓學生表態）</span></p><p>有 https 是相對安全，但給你一個更保險的實戰建議：遇到<b>網銀、刷卡</b>這種重要的事，<b>寧可關掉 Wi-Fi、改用自己的行動網路</b>。安全的事，不怕一萬只怕萬一。</p></div></div>
 <div class="rz-row"><div class="rz-left"><span class="rz-no">4</span><div class="analogy"><div class="ai">✉️</div><div class="at">http 像寄<b>明信片</b>，沿途郵差都看得到內容；https 像寄<b>密封信</b>，只有收件人拆得開。網址列的鎖頭，就是「這封信已密封」的標記。</div></div></div><div class="rz-right"><div class='rzh'>🎤 第 4 塊 · 老師照著念</div><p>http 和 https 的差別，打個比方就懂：<b>http 像寄明信片</b>，沿途郵差都看得到內容；<b>https 像寄密封信</b>，只有收件人拆得開。網址列那個鎖頭，就是『這封信已密封』的標記。</p><p>幫這個比喻補一個它沒講到的：密封信只比喻了『<b>加密</b>』，但 https 還做第二件事——<b>身分驗證</b>。完整講是：<b>鎖頭＝信封有密封＋寄件門牌也登記查得到</b>，所以它強的不只是內容看不到，連『對方是誰』都有人幫你查過。</p></div></div>
 <div class="rz-row"><div class="rz-left"><span class="rz-no">5</span><div class="subhead">http 與 https 的差別</div></div><div class="rz-right"><div class='rzh'>🎤 第 5 塊 · 老師照著念</div><p>我們把 <b>http 和 https</b> 放一起，看到底差在哪四件事。<span class='rzcue'>（可先遮住表右半，讓學生自己講出兩個差別，再掀開核對）</span></p></div></div>
-<div class="rz-row"><div class="rz-left"><span class="rz-no">6</span><div class="subhead">🔬 攔截示範：同樣的帳號密碼，http 與 https 差在哪</div><div class="httpsdemo https" id="httpsDemo"><div class="hd-tabs"><button class="hd-tab t-http" onclick="document.getElementById('httpsDemo').className='httpsdemo http'">① 用 http（沒上鎖）</button><button class="hd-tab t-https" onclick="document.getElementById('httpsDemo').className='httpsdemo https'">② 用 https（上鎖）</button></div><div class="hd-addr"></div><div class="hd-scene"><div class="hd-box hd-you">📤 <b>你（瀏覽器）</b>在這個網站登入，送出：帳號 <b>ken</b>、密碼 <b>1234</b>。</div><div class="hd-box hd-hack">😈 <b>半路偷看的駭客</b>攔截到的內容：<div class="hd-seen"></div></div></div><div class="hd-hint">👆 點上面兩個分頁切換，比較同一組帳號密碼，被攔截時 http 和 https 的差別。</div></div></div><div class="rz-right"><div class='rzh'>🎤 第 6 塊 · 老師照著念</div><p>這裡做個現場示範，讓他們親眼看到差別。<span class='rzcue'>（請學生看螢幕，你點兩個分頁切換）</span>同樣輸入帳號 <b>ken</b>、密碼 <b>1234</b>：點『<b>http</b>』，駭客攔截到的就是「帳號 ken、密碼 1234」——<b>看得一清二楚</b>，因為 http 是明文、像<b>明信片</b>；點『<b>https</b>』，攔截到的變成一串<b>加密亂碼</b>——這就是上了鎖、像<b>密封信</b>，偷了也用不了。所以登入、付款前，先看網址列有沒有 <b>https 和鎖頭</b>。</p></div></div>
+<div class="rz-row"><div class="rz-left"><span class="rz-no">6</span><div class="example"><div class="et">🔬 帳號密碼被攔截：http vs https</div><div class="eb">同樣送出<b>帳號 ken、密碼 1234</b>，半路被駭客攔到：<br>• <b>http（沒上鎖）</b> → 看到 <span class="mono">帳號：ken　密碼：1234</span>（<b>明文，一清二楚</b>）<br>• <b>https（上鎖）</b> → 看到 <span class="mono">aX9$kL2#pQ7@zR4!vM8…</span>（<b>加密亂碼，偷了也沒用</b>）</div></div></div><div class="rz-right"><div class='rzh'>🎤 第 6 塊 · 老師照著念</div><p>用一個具體例子講差別（口頭帶過就好）：同樣送出帳號 <b>ken</b>、密碼 <b>1234</b>，半路被攔截。<b>http 是明文</b>，攔到的就是「帳號 ken、密碼 1234」，一清二楚，像<b>明信片</b>；<b>https 有加密</b>，攔到的是一串<b>亂碼</b>，像<b>密封信</b>，偷了也用不了。所以登入、付款前，先看網址列有沒有 <b>https 和鎖頭</b>。</p></div></div>
 <div class="rz-row"><div class="rz-left"><span class="rz-no">7</span><table class="ntable">
 <tr><th>比較</th><th>http（沒上鎖）</th><th>https（有上鎖）</th></tr>
 <tr><td>傳輸內容</td><td>明文，看得一清二楚</td><td>加密，攔到也是亂碼</td></tr>
